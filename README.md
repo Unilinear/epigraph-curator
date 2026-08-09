@@ -2,11 +2,9 @@
 
 [![Validate](https://github.com/Unilinear/epigraph-curator/actions/workflows/validate.yml/badge.svg)](https://github.com/Unilinear/epigraph-curator/actions/workflows/validate.yml)
 
-> *凡操千曲而後曉聲，觀千劍而後識器。*
->
 > *Only after playing a thousand tunes does one understand music; only after examining a thousand swords does one recognize a fine weapon.*
 >
-> <div align="right">— 劉勰</div>
+> <div align="right">— Liu Xie</div>
 
 <!-- epigraph-curator
 framing-intent: Editorial taste is earned through broad encounter and disciplined comparison, not a dump of plausible quotations.
@@ -18,6 +16,7 @@ source-quotation: |
   凡操千曲而後曉聲，觀千劍而後識器。
 semantic-invariant: Reliable taste is earned through wide, repeated encounter with actual works.
 rendering: translation
+display: document-language-only
 translation: Epigraph Curator rendering
 adaptation: none
 rationale: The line grounds curation in broad reading and comparison rather than a quote dump.
@@ -35,7 +34,7 @@ Not a random quote generator. Not a search-results page. One sourced editorial a
 - **Existing quality is preserved.** A strong, sourced epigraph is not replaced merely for novelty.
 - **The whole document matters.** Selection begins with a one-sentence Framing Intent, not keyword matching.
 - **Sources are inspectable.** Every preview includes an author, work, locator, and direct URL.
-- **Bilingual without clutter.** Original first, faithful translation second; translation provenance stays outside the card.
+- **You choose the final language.** Keep both languages, the document language only, or the source language only.
 - **Approval is a hard seam.** The skill previews first and edits only after explicit approval.
 - **Offline behavior is honest.** Without Web access it uses the bundled, public-domain source catalog or refuses; it never invents a source from model memory.
 - **No hidden state.** It writes no personal library, telemetry, or configuration.
@@ -103,8 +102,9 @@ The default flow is deliberately short:
 1. The skill reads the entire target document and infers its Framing Intent.
 2. It researches multiple conceptual routes and verifies the exact wording.
 3. It returns one card, one sentence of rationale, and one direct source.
-4. It leaves every file unchanged.
-5. After an explicit approval, it inserts the exact preview and an adjacent hidden provenance note.
+4. For cross-language selections, it offers bilingual, document-language-only, and source-language-only display.
+5. It leaves every file unchanged until the user approves the exact card and Display Mode.
+6. It inserts the approved preview and an adjacent hidden provenance note.
 
 See the small [before](examples/README.before.md) and [after](examples/README.after.md) example.
 

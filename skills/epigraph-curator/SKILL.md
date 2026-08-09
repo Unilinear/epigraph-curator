@@ -5,7 +5,7 @@ license: MIT
 compatibility: Requires Markdown file access. Live Web search improves coverage; without it, the skill uses only its bundled source catalog and may refuse.
 metadata:
   author: Unilinear
-  version: "1.0.2"
+  version: "1.1.0"
   homepage: https://github.com/Unilinear/epigraph-curator
 ---
 
@@ -15,7 +15,7 @@ Give one document one opening line worthy of it. The default is one opinionated 
 
 ## Interface
 
-The user supplies a **Target Document** and may supply constraints such as author, source language, tone, or **Framing Intent**. Treat constraints as optional: a request such as “Curate an epigraph for `README.md`” should normally be enough.
+The user supplies a **Target Document** and may supply constraints such as author, source language, tone, **Framing Intent**, or final **Display Mode**. Treat constraints as optional: a request such as “Curate an epigraph for `README.md`” should normally be enough.
 
 This skill has two phases:
 
@@ -50,7 +50,7 @@ Do not equate search-result snippets with evidence. Open the best available sour
 
 When Web access is unavailable, use only the bundled catalog. Never use model memory as a quotation source.
 
-Keep the candidate ledger internal. It must record each candidate’s exact wording, language, conventional author, work, locator, URL, evidence quality, **Semantic Invariant**, and rendering mode.
+Keep the candidate ledger internal. It must record each candidate’s exact wording, language, conventional author, work, locator, URL, evidence quality, **Semantic Invariant**, rendering mode, and Display Mode.
 
 ## 3. Curate
 
@@ -72,30 +72,36 @@ Follow the rendering modes in the source policy:
 
 - exact wording may carry direct attribution;
 - omissions and insertions must be visible;
-- in a bilingual card, exact source wording comes first and its faithful translation second, without a visible prose label;
 - wording adapted beyond faithful translation must say “After [Author]”, never “— [Author]”.
 
-Use renderer-compatible Markdown. When uncertain, use:
+When source and document languages differ, the final **Display Mode** is the user’s choice:
+
+- `bilingual` — exact source first, faithful document-language translation second;
+- `document-language-only` — faithful translation only;
+- `source-language-only` — exact source wording only.
+
+Do not add visible prose labels such as `Translation:`. Keep translation authorship in preview metadata and the hidden provenance note.
+
+If the user did not request a Display Mode, preview `document-language-only` by default and offer all three modes. A mode change produces a new preview and invalidates the earlier one. Never apply a mode that was not shown in the latest preview. When both languages match, render one line, record `single-language`, and omit the choice.
+
+Use renderer-compatible Markdown. A single-language card is:
 
 ```md
-> *[exact source-language wording]*
->
-> *[faithful document-language rendering]*
+> *[approved source wording or faithful translation]*
 >
 > <div align="right">— [Author]</div>
 ```
-
-Omit the second line when source and document languages match. Keep translation authorship outside the card in preview metadata and the hidden provenance note.
 
 ## 5. Preview
 
 Return this compact contract:
 
 1. `Preview — no files changed.`
-2. One rendered Lead Epigraph card.
+2. One rendered Lead Epigraph card in the requested or default Display Mode.
 3. `Why this fits:` followed by one sentence.
 4. `Source:` followed by author, work, locator, and direct URL; when translated, identify the translation rendering on this provenance line outside the card.
-5. A request for explicit approval to edit the named Target Document, unless the user requested suggestions only.
+5. When source and document languages differ, `Display:` followed by `bilingual / document language only / source language only`.
+6. A request to approve the shown card or request another Display Mode, unless the user requested suggestions only.
 
 Do not show scores, rejected candidates, or a search transcript unless asked. Alternatives are opt-in; each new preview invalidates the previous one.
 
@@ -105,7 +111,7 @@ For an Editorial Refusal, name the failed gate or source problem in one concise 
 
 ## 6. Apply only after approval
 
-After explicit approval of the latest preview:
+After explicit approval of the latest preview and its shown Display Mode:
 
 1. Read [the insertion protocol](references/insertion.md) completely.
 2. Re-read the entire Target Document. If its content or Framing Intent materially changed, do not apply the stale preview; curate again.

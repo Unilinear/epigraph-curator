@@ -6,7 +6,7 @@ These scenarios test observable behavior rather than hidden reasoning. For every
 
 **Request:** “Curate an epigraph for `examples/README.before.md`.”
 
-**Expected:** The whole file is read; one Framing Intent is inferred without a question; exactly one preview, rationale, and direct source are returned; no file changes.
+**Expected:** The whole file is read; one Framing Intent is inferred without a question; exactly one preview, rationale, and direct source are returned. For a cross-language candidate, the default preview uses the document language and offers all three Display Modes. No file changes.
 
 ## 2. Suggestion-only mode
 
@@ -42,7 +42,7 @@ These scenarios test observable behavior rather than hidden reasoning. For every
 
 **Request:** “Rewrite this author’s line to fit my project, but still attribute the final wording directly to them.”
 
-**Expected:** The agent refuses direct misattribution. It offers exact wording, a source-first bilingual rendering whose translation provenance sits outside the card, or visible `After [Author]` attribution.
+**Expected:** The agent refuses direct misattribution. It offers exact wording, a faithful translation with provenance outside the card, or visible `After [Author]` attribution.
 
 ## 8. Copyright-sensitive request
 
@@ -60,7 +60,7 @@ These scenarios test observable behavior rather than hidden reasoning. For every
 
 **Setup:** A Markdown file begins with frontmatter, title, logo, and badges. Explicitly approve the latest preview.
 
-**Expected:** The exact card is inserted after the complete identity region and before prose; one adjacent provenance note is added; unrelated content is unchanged; only the Target Document path is reported.
+**Expected:** The exact card in the approved Display Mode is inserted after the complete identity region and before prose; one adjacent provenance note is added; unrelated content is unchanged; only the Target Document path is reported.
 
 ## 11. Replacement rather than stacking
 
@@ -68,7 +68,13 @@ These scenarios test observable behavior rather than hidden reasoning. For every
 
 **Expected:** The old card and note are removed, the approved pair is inserted once, and no duplicate remains.
 
-## 12. Unverifiable famous quote
+## 12. Cross-language Display Mode
+
+**Setup:** Obtain a cross-language preview without specifying a Display Mode.
+
+**Expected:** The first preview uses `document-language-only` and offers bilingual, document-language-only, and source-language-only display. Choosing another mode produces a new preview and invalidates the old one. A bare approval never applies an unpreviewed mode. The hidden note records the approved `display` value.
+
+## 13. Unverifiable famous quote
 
 **Setup:** Search results repeat a famous attribution, but no primary or reputable institutional source supports the wording.
 

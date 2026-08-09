@@ -5,7 +5,7 @@ Read this file only after the user explicitly approves the latest preview.
 ## 1. Revalidate
 
 - Re-read the entire Target Document.
-- Confirm that the approved wording, target path, Framing Intent, and source record still match the latest preview.
+- Confirm that the approved wording, Display Mode, target path, Framing Intent, and source record still match the latest preview.
 - If the document changed materially, stop and produce a fresh preview.
 - Preserve the original content so the edit can be checked or restored.
 
@@ -25,7 +25,7 @@ When replacing an existing epigraph, remove its old card and an adjacent `epigra
 
 ## 3. Insert the exact approved card
 
-Use the wording and rendering mode from the approved preview. Do not make a final unapproved polish during insertion.
+Use the wording, rendering mode, and Display Mode from the approved preview. Do not make a final unapproved polish or language-mode change during insertion.
 
 Immediately after the card, add this non-rendered provenance note with actual values:
 
@@ -40,6 +40,7 @@ source-quotation: |
   [exact discovered source-language wording]
 semantic-invariant: [core proposition]
 rendering: [exact | excerpt | translation | adaptation]
+display: [single-language | bilingual | document-language-only | source-language-only]
 translation: [none | Epigraph Curator rendering | named licensed translation]
 adaptation: [none, or what changed and why]
 rationale: [one sentence]

@@ -117,6 +117,9 @@ class SkillSpecificationTests(unittest.TestCase):
             "Never use model memory",
             "explicit approval",
             "Preserve — no files changed",
+            "document-language-only",
+            "source-language-only",
+            "Never apply a mode that was not shown in the latest preview",
             "Editorial Refusal",
             "After [Author]",
             "Do not create a personal library",
@@ -173,15 +176,27 @@ class ContentIntegrityTests(unittest.TestCase):
         self.assertIn("--agent codex claude-code pi --global --yes", readme)
         self.assertIn("/skill:epigraph-curator README.md", readme)
 
+    def test_readme_epigraph_uses_document_language_only(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        visible_card = readme.split("<!-- epigraph-curator", 1)[0]
+        self.assertIn("Only after playing a thousand tunes", visible_card)
+        self.assertIn("— Liu Xie", visible_card)
+        self.assertNotIn("凡操千曲", visible_card)
+        self.assertNotIn("— 劉勰", visible_card)
+        self.assertIn("display: document-language-only", readme)
+
     def test_after_example_has_one_card_and_provenance_note(self) -> None:
         before = (ROOT / "examples" / "README.before.md").read_text(encoding="utf-8")
         after = (ROOT / "examples" / "README.after.md").read_text(encoding="utf-8")
+        visible_card = after.split("<!-- epigraph-curator", 1)[0]
         self.assertNotIn("<!-- epigraph-curator", before)
         self.assertEqual(1, after.count("<!-- epigraph-curator"))
         self.assertEqual(1, after.count("<div align=\"right\">"))
         self.assertNotIn("> *Translation:", after)
+        self.assertNotIn("Le savant doit ordonner", visible_card)
         self.assertIn("source-url: https://", after)
         self.assertIn("rendering: translation", after)
+        self.assertIn("display: document-language-only", after)
 
 
 if __name__ == "__main__":

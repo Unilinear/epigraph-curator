@@ -2,8 +2,6 @@
 
 [![Build](https://img.shields.io/badge/build-passing-brightgreen)](#)
 
-> *Le savant doit ordonner ; on fait la science avec des faits comme une maison avec des pierres ; mais une accumulation de faits n’est pas plus une science qu’un tas de pierres n’est une maison.*
->
 > *The scientist must put things in order; science is built with facts as a house is built with stones, but an accumulation of facts is no more a science than a heap of stones is a house.*
 >
 > <div align="right">— Henri Poincaré</div>
@@ -18,6 +16,7 @@ source-quotation: |
   Le savant doit ordonner ; on fait la science avec des faits comme une maison avec des pierres ; mais une accumulation de faits n’est pas plus une science qu’un tas de pierres n’est une maison.
 semantic-invariant: Information becomes knowledge through ordered relations, not accumulation alone.
 rendering: translation
+display: document-language-only
 translation: Epigraph Curator rendering
 adaptation: none
 rationale: Poincaré turns the project's preference for structured signals over event volume into an architectural image.
