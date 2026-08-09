@@ -42,19 +42,45 @@ Not a random quote generator. Not a search-results page. One sourced editorial a
 
 ## Install
 
-From GitHub:
+The commands below install Epigraph Curator globally so it is available in every project. Remove `--global` for a project-local installation.
+
+### OpenAI Codex
 
 ```bash
-npx skills add Unilinear/epigraph-curator --skill epigraph-curator
+npx skills add Unilinear/epigraph-curator --skill epigraph-curator --agent codex --global --yes
 ```
 
-From a local checkout:
+### Claude Code
+
+```bash
+npx skills add Unilinear/epigraph-curator --skill epigraph-curator --agent claude-code --global --yes
+```
+
+### Pi
+
+```bash
+npx skills add Unilinear/epigraph-curator --skill epigraph-curator --agent pi --global --yes
+```
+
+Pi discovers installed skills when a session starts. Invoke it naturally or force-load it with:
+
+```text
+/skill:epigraph-curator README.md
+```
+
+### Install for all three
+
+```bash
+npx skills add Unilinear/epigraph-curator --skill epigraph-curator --agent codex claude-code pi --global --yes
+```
+
+### Local checkout
 
 ```bash
 npx skills add . --skill epigraph-curator
 ```
 
-The repository follows the portable Agent Skills layout, so compatible agents can also load [`skills/epigraph-curator/`](skills/epigraph-curator/) directly.
+The repository follows the portable Agent Skills layout, so compatible agents can also load [`skills/epigraph-curator/`](skills/epigraph-curator/) directly. Start a new agent session after installation so the skill is discovered.
 
 ## Use
 

@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2026-08-10
+
+### Added
+
+- Added explicit global installation commands for OpenAI Codex, Claude Code, and Pi.
+- Added a combined three-agent installation command and Pi invocation example.
+
 ## [1.0.1] - 2026-08-10
 
 ### Changed
@@ -21,5 +28,6 @@ All notable changes to this project are documented here. The format follows [Kee
 - Prompt-injection handling, stale-preview protection, and editorial refusal behavior.
 - Repository validation tests and installation smoke test.
 
+[1.0.2]: https://github.com/Unilinear/epigraph-curator/releases/tag/v1.0.2
 [1.0.1]: https://github.com/Unilinear/epigraph-curator/releases/tag/v1.0.1
 [1.0.0]: https://github.com/Unilinear/epigraph-curator/releases/tag/v1.0.0

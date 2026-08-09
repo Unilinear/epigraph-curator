@@ -161,6 +161,18 @@ class ContentIntegrityTests(unittest.TestCase):
                 source_line = next(line for line in entry.splitlines() if line.startswith("- **Source:**"))
                 self.assertIn("https://", source_line)
 
+    def test_readme_documents_supported_agent_installation(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        for agent in ("codex", "claude-code", "pi"):
+            with self.subTest(agent=agent):
+                command = (
+                    "npx skills add Unilinear/epigraph-curator --skill epigraph-curator "
+                    f"--agent {agent} --global --yes"
+                )
+                self.assertIn(command, readme)
+        self.assertIn("--agent codex claude-code pi --global --yes", readme)
+        self.assertIn("/skill:epigraph-curator README.md", readme)
+
     def test_after_example_has_one_card_and_provenance_note(self) -> None:
         before = (ROOT / "examples" / "README.before.md").read_text(encoding="utf-8")
         after = (ROOT / "examples" / "README.after.md").read_text(encoding="utf-8")

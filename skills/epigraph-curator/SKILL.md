@@ -5,7 +5,7 @@ license: MIT
 compatibility: Requires Markdown file access. Live Web search improves coverage; without it, the skill uses only its bundled source catalog and may refuse.
 metadata:
   author: Unilinear
-  version: "1.0.1"
+  version: "1.0.2"
   homepage: https://github.com/Unilinear/epigraph-curator
 ---
 
