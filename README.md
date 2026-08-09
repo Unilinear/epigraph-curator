@@ -2,25 +2,25 @@
 
 [![Validate](https://github.com/Unilinear/epigraph-curator/actions/workflows/validate.yml/badge.svg)](https://github.com/Unilinear/epigraph-curator/actions/workflows/validate.yml)
 
-> *La parole est moitié à celuy qui parle, moitié à celuy qui l’escoute.*
+> *凡操千曲而後曉聲，觀千劍而後識器。*
 >
-> *Speech belongs half to the speaker, half to the listener.*
+> *Only after playing a thousand tunes does one understand music; only after examining a thousand swords does one recognize a fine weapon.*
 >
-> <div align="right">— Michel de Montaigne</div>
+> <div align="right">— 劉勰</div>
 
 <!-- epigraph-curator
-framing-intent: A document's meaning is completed by its reader, so its opening frame matters.
-source-author: Michel de Montaigne
-source-work: Essais III.13, De l’expérience
-source-locator: 1588 text, book III, chapter XIII
-source-url: https://artflsrv03.uchicago.edu/philologic4/montaigne1588/navigate/1/4/14
+framing-intent: Editorial taste is earned through broad encounter and disciplined comparison, not a dump of plausible quotations.
+source-author: Liu Xie (劉勰)
+source-work: 文心雕龍 (The Literary Mind and the Carving of Dragons), 知音 (Knowing the Tone)
+source-locator: paragraph 4, sentence n108513
+source-url: https://ctext.org/wenxin-diaolong/zhi-yin/zh#n108513
 source-quotation: |
-  La parole est moitié à celuy qui parle, moitié à celuy qui l’escoute.
-semantic-invariant: Meaning in speech is made jointly by speaker and listener.
+  凡操千曲而後曉聲，觀千劍而後識器。
+semantic-invariant: Reliable taste is earned through wide, repeated encounter with actual works.
 rendering: translation
 translation: Epigraph Curator rendering
 adaptation: none
-rationale: The line makes the reader a participant in the meaning the document is about to create.
+rationale: The line grounds curation in broad reading and comparison rather than a quote dump.
 -->
 
 **Give your ideas ancestors.**
