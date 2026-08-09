@@ -5,7 +5,7 @@ license: MIT
 compatibility: Requires Markdown file access. Live Web search improves coverage; without it, the skill uses only its bundled source catalog and may refuse.
 metadata:
   author: Unilinear
-  version: "1.0.0"
+  version: "1.0.1"
   homepage: https://github.com/Unilinear/epigraph-curator
 ---
 
@@ -72,7 +72,7 @@ Follow the rendering modes in the source policy:
 
 - exact wording may carry direct attribution;
 - omissions and insertions must be visible;
-- a translation must be labeled as a translation;
+- in a bilingual card, exact source wording comes first and its faithful translation second, without a visible prose label;
 - wording adapted beyond faithful translation must say “After [Author]”, never “— [Author]”.
 
 Use renderer-compatible Markdown. When uncertain, use:
@@ -80,12 +80,12 @@ Use renderer-compatible Markdown. When uncertain, use:
 ```md
 > *[exact source-language wording]*
 >
-> *Translation: [faithful document-language rendering]*
+> *[faithful document-language rendering]*
 >
 > <div align="right">— [Author]</div>
 ```
 
-Omit the translation line when source and document languages match. Localize the label “Translation” to the document language when appropriate.
+Omit the second line when source and document languages match. Keep translation authorship outside the card in preview metadata and the hidden provenance note.
 
 ## 5. Preview
 
@@ -94,7 +94,7 @@ Return this compact contract:
 1. `Preview — no files changed.`
 2. One rendered Lead Epigraph card.
 3. `Why this fits:` followed by one sentence.
-4. `Source:` followed by author, work, locator, and direct URL.
+4. `Source:` followed by author, work, locator, and direct URL; when translated, identify the translation rendering on this provenance line outside the card.
 5. A request for explicit approval to edit the named Target Document, unless the user requested suggestions only.
 
 Do not show scores, rejected candidates, or a search transcript unless asked. Alternatives are opt-in; each new preview invalidates the previous one.

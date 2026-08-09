@@ -97,6 +97,7 @@ class SkillSpecificationTests(unittest.TestCase):
 
     def test_skill_is_progressively_disclosed(self) -> None:
         self.assertLessEqual(len(self.text.splitlines()), 500)
+        self.assertNotIn("> *Translation:", self.text)
         references = re.findall(r"\[[^\]]+\]\((references/[^)#]+\.md)\)", self.text)
         self.assertEqual(
             {
@@ -166,6 +167,7 @@ class ContentIntegrityTests(unittest.TestCase):
         self.assertNotIn("<!-- epigraph-curator", before)
         self.assertEqual(1, after.count("<!-- epigraph-curator"))
         self.assertEqual(1, after.count("<div align=\"right\">"))
+        self.assertNotIn("> *Translation:", after)
         self.assertIn("source-url: https://", after)
         self.assertIn("rendering: translation", after)
 

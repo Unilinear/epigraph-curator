@@ -4,7 +4,7 @@
 
 > *Le savant doit ordonner ; on fait la science avec des faits comme une maison avec des pierres ; mais une accumulation de faits n’est pas plus une science qu’un tas de pierres n’est une maison.*
 >
-> *Translation: The scientist must put things in order; science is built with facts as a house is built with stones, but an accumulation of facts is no more a science than a heap of stones is a house.*
+> *The scientist must put things in order; science is built with facts as a house is built with stones, but an accumulation of facts is no more a science than a heap of stones is a house.*
 >
 > <div align="right">— Henri Poincaré</div>
 

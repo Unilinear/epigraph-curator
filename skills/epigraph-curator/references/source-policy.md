@@ -49,9 +49,9 @@ Direct attribution is allowed when the excerpt remains faithful.
 
 ### Translation
 
-Show the exact source-language wording first when practical. Label the document-language line as a translation. Translate the proposition faithfully; do not improve the author’s claim to fit the document.
+Show the exact source-language wording first and the document-language rendering second. Do not prefix the second line with visible prose such as `Translation:`; the fixed order keeps the card quiet. Translate the proposition faithfully and do not improve the author’s claim to fit the document.
 
-Attribute the original to the author. Record `translation: Epigraph Curator rendering` in the hidden note unless a named, licensed translation was actually used.
+Attribute the original to the author. Identify the translation rendering on the preview’s provenance line outside the card, and record `translation: Epigraph Curator rendering` in the hidden note unless a named, licensed translation was actually used.
 
 ### Adaptation
 

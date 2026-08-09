@@ -4,7 +4,7 @@
 
 > *La parole est moitié à celuy qui parle, moitié à celuy qui l’escoute.*
 >
-> *Translation: Speech belongs half to the speaker, half to the listener.*
+> *Speech belongs half to the speaker, half to the listener.*
 >
 > <div align="right">— Michel de Montaigne</div>
 
@@ -35,7 +35,7 @@ Not a random quote generator. Not a search-results page. One sourced editorial a
 - **Existing quality is preserved.** A strong, sourced epigraph is not replaced merely for novelty.
 - **The whole document matters.** Selection begins with a one-sentence Framing Intent, not keyword matching.
 - **Sources are inspectable.** Every preview includes an author, work, locator, and direct URL.
-- **Translations are labeled.** Adapted wording is attributed as “After [Author]”, never passed off as a quotation.
+- **Bilingual without clutter.** Original first, faithful translation second; translation provenance stays outside the card.
 - **Approval is a hard seam.** The skill previews first and edits only after explicit approval.
 - **Offline behavior is honest.** Without Web access it uses the bundled, public-domain source catalog or refuses; it never invents a source from model memory.
 - **No hidden state.** It writes no personal library, telemetry, or configuration.

@@ -173,5 +173,5 @@ The quoted source texts below are public-domain originals to the best of the mai
 
 - Treat each entry as a candidate, never a default.
 - Preserve the source wording in the internal record and hidden note.
-- Create translations afresh and label them; do not copy translations from linked pages unless their license permits it.
+- Create translations afresh and record their provenance outside the rendered card; do not copy translations from linked pages unless their license permits it.
 - A catalog entry can still fail Rhetorical Fit, Distinctiveness, or Elegance for a particular document.
