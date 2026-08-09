@@ -1,0 +1,42 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  release-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run repository tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Verify discovery and packaged references
+        shell: bash
+        run: |
+          temp_dir="$(mktemp -d)"
+          cd "$temp_dir"
+          npx --yes skills@1.5.22 add "$GITHUB_WORKSPACE" \
+            --skill epigraph-curator --agent codex --copy -y
+          package="$temp_dir/.agents/skills/epigraph-curator"
+          test -f "$package/SKILL.md"
+          test -f "$package/agents/openai.yaml"
+          test "$(find "$package/references" -maxdepth 1 -type f | wc -l)" -eq 4

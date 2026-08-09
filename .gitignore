@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local agent installations and settings
+.agents/
+.claude/
+.codex/
+.cursor/
+.pi/
+skills-lock.json
+
+# Temporary files
+*.tmp
+*.bak
+*~

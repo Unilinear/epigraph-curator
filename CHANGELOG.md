@@ -1,0 +1,17 @@
+# Changelog
+
+All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.0] - 2026-08-10
+
+### Added
+
+- One-preview curation workflow with an explicit approval seam.
+- Source-verification and attribution policy for exact text, excerpts, translations, and adaptations.
+- Three editorial gates: Rhetorical Fit, Distinctiveness, and Elegance.
+- Offline catalog of traceable public-domain source quotations.
+- Safe Markdown insertion protocol with adjacent provenance notes.
+- Prompt-injection handling, stale-preview protection, and editorial refusal behavior.
+- Repository validation tests and installation smoke test.
+
+[1.0.0]: https://github.com/Unilinear/epigraph-curator/releases/tag/v1.0.0

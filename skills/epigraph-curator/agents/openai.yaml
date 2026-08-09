@@ -1,0 +1,3 @@
+interface:
+  display_name: "Epigraph Curator"
+  short_description: "Curate a sourced Markdown epigraph"
